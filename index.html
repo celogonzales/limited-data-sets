@@ -1,28 +1,40 @@
-<img src="chart.svg?v=3" alt="My chart" width="400">
-div class="tooltip"></div>
-<script>
-const tooltip = document.querySelector('.tooltip');
-function updateTooltip(t){
-  tooltip.textContent = t;
-  tooltip.style.opacity = 1;
-  tooltip.style.left = event.clientX + 20 + 'px';
-  tooltip.style.top  = event.clientY - 20 + 'px';
-}
-function clearTooltip() {
-  tooltip.style.opacity = 0;
-}
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Interactive Chart Demo</title>
 
-<style>
-.tooltip {
-  position: fixed;
-  background: black;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-</style>
+  <!-- tooltip styling -->
+  <style>
+    .tooltip{
+      position:fixed;
+      background:#000; color:#fff;
+      padding:4px 8px; border-radius:4px;
+      font:12px/1.2 Lato, Arial, sans-serif;
+      opacity:0; pointer-events:none;
+      transition:opacity .2s;
+    }
+    svg rect, svg g rect { cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<!-- INLINE SVG (not via <img>) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.04 325">
+  <defs>
+    <style>
+      .cls-1{fill:#29abe2;}
+      .cls-2{fill:#fff;}
+      .cls-3{font-family:Lato-Black,Lato;font-size:26.49px;font-weight:800;}
+      .cls-4{fill:#22b573;}
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-1" x=".5" y=".5" width="85" height="324"/>
+    <path d="M85,1v323H1V1h84M86,0H0v325h86V0Z"/>
+    <rect x="100.5" y="155.5" width="85" height="169"/>
+    <path class="cls-2" d="M185,156v168h-84v-168h84Zm1-1h-86v170h86Z"/>
+
+    <!-- GREEN BAR with tooltip handlers -->
+    <rect class="cls-4" x="200.5" y="225.5" width="85" height="99" rx="14.
