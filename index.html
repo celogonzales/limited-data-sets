@@ -1,1 +1,28 @@
 <img src="chart.svg?v=3" alt="My chart" width="400">
+div class="tooltip"></div>
+<script>
+const tooltip = document.querySelector('.tooltip');
+function updateTooltip(t){
+  tooltip.textContent = t;
+  tooltip.style.opacity = 1;
+  tooltip.style.left = event.clientX + 20 + 'px';
+  tooltip.style.top  = event.clientY - 20 + 'px';
+}
+function clearTooltip() {
+  tooltip.style.opacity = 0;
+}
+</script>
+
+<style>
+.tooltip {
+  position: fixed;
+  background: black;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+</style>
