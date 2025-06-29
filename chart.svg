@@ -10,9 +10,11 @@
         <rect x="100.5" y="155.5" width="85" height="169" />
         <path class="cls-2" d="M185,156v168h-84v-168h84M186,155h-86v170h86v-170h0Z" />
         <g>
-    <rect class="cls-4"
+<rect class="cls-4"
       x="200.5" y="225.5" width="85" height="99"
-      rx="14.47" ry="14.47">
+      rx="14.47" ry="14.47"
+      onmouseover="updateTooltip('Green bar = 25')"
+      onmouseout="clearTooltip()"/>
   <title>Green bar: 25 units</title>
 </rect>
 </g>
