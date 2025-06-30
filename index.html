@@ -513,18 +513,27 @@
   <div class="tooltip"></div>
 
   <!-- Tooltip logic -->
-  <script>
-    const tt = document.querySelector('.tooltip');
-    function updateTooltip(txt){
-      tt.textContent = txt;
-      tt.style.opacity = 1;
-      tt.style.left = event.clientX + 15 + 'px';
-      tt.style.top  = event.clientY - 25 + 'px';
-    }
-    function clearTooltip(){
-      tt.style.opacity = 0;
-    }
-  </script>
+<script>
+  const tt = document.querySelector('.tooltip');
+
+  function updateTooltip(txt) {
+    tt.textContent = txt;
+    tt.style.opacity = 1;
+    tt.style.left = event.clientX + 15 + 'px';
+    tt.style.top  = event.clientY - 25 + 'px';
+
+    const svg = event.target.ownerSVGElement;
+    svg.querySelectorAll('*').forEach(n => n.classList.add('fade'));
+    event.target.classList.remove('fade');
+  }
+
+  function clearTooltip() {
+    tt.style.opacity = 0;
+
+    const svg = event.target.ownerSVGElement;
+    svg.querySelectorAll('.fade').forEach(n => n.classList.remove('fade'));
+  }
+</script>
 
 </body>
 </html>
